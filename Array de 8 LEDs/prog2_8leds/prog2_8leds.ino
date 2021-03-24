@@ -16,7 +16,7 @@ const int led4 = 9;          // donar nom al pin 9 de l’Arduino
 const int led5 = 10;         // donar nom al pin 10 de l’Arduino
 const int led6 = 11;         // donar nom al pin 11 de l’Arduino
 const int led7 = 12;         // donar nom al pin 12 de l’Arduino
-
+const unsigned long t=100;   // constant de TEMPS
 //********** Setup ****************************************************************
 void setup()
 {
@@ -33,27 +33,27 @@ void setup()
 //********** Loop *****************************************************************
 void loop()
 {
-  digitalWrite(led0, HIGH);    // posar a 5V el pin 5
-  digitalWrite(led1, 1);    // posar a 5V el pin 6
-  digitalWrite(led2, HIGH);    // posar a 5V el pin 7
-  digitalWrite(led3, 1);    // posar a 5V el pin 8
-  digitalWrite(led4, HIGH);    // posar a 5V el pin 9
-  digitalWrite(led5, 1);    // posar a 5V el pin 10
-  digitalWrite(led6, HIGH);    // posar a 5V el pin 11
+  digitalWrite(led0, 1);    // posar a 5V el pin 5
+  digitalWrite(led1, 1);    // posar a 0V el pin 6
+  digitalWrite(led2, 1);    // posar a 0V el pin 7
+  digitalWrite(led3, 1);    // posar a 0V el pin 8
+  digitalWrite(led4, 1);    // posar a 0V el pin 9
+  digitalWrite(led5, 1);    // posar a 0V el pin 10
+  digitalWrite(led6, 1);    // posar a 0V el pin 11
   digitalWrite(led7, 1);    // posar a 5V el pin 12
   
-  delay(500);                  // es queden leds 500ms encesos
+  delay(t);                  // es queden leds 500ms encesos
   
-  digitalWrite(led0, LOW);     // posar a 0V el pin 5
-  digitalWrite(led1, 0);     // posar a 0V el pin 6
-  digitalWrite(led2, LOW);     // posar a 0V el pin 7
-  digitalWrite(led3, 0);     // posar a 0V el pin 8
-  digitalWrite(led4, LOW);     // posar a 0V el pin 9
-  digitalWrite(led5, 0);     // posar a 0V el pin 10
-  digitalWrite(led6, LOW);     // posar a 0V el pin 11
-  digitalWrite(led7, 0 );     // posar a 0V el pin 12.
-  
-  delay(500);                  // es queden leds 500ms apagats
+  digitalWrite(led0, 0);    // posar a 5V el pin 5
+  digitalWrite(led1, 0);    // posar a 5V el pin 6
+  digitalWrite(led2, 0);    // posar a 0V el pin 7
+  digitalWrite(led3, 0);    // posar a 0V el pin 8
+  digitalWrite(led4, 0);    // posar a 0V el pin 9
+  digitalWrite(led5, 0);    // posar a 0V el pin 10
+  digitalWrite(led6, 0);    // posar a 5V el pin 11
+  digitalWrite(led7, 0);    // posar a 5V el pin 12  
+             
+  delay(500);
 }
 
 //********** Funcions *************************************************************
