@@ -19,7 +19,7 @@ const int led4 = 9;          // donar nom al pin 9 de l’Arduino
 const int led5 = 10;         // donar nom al pin 10 de l’Arduino
 const int led6 = 11;         // donar nom al pin 11 de l’Arduino
 const int led7 = 12;         // donar nom al pin 12 de l’Arduino
-const int t=500;
+const unsigned long t=200;
 
 //********** Setup ****************************************************************
 void setup()
@@ -77,7 +77,7 @@ void loop()
   digitalWrite(led6, 1);    // posar a 0V el pin 11
   digitalWrite(led7, 0);    // posar a 5V el pin 12
   
-  delay(t);                  // es queden leds 500ms encesos
+  delay(500);                  // es queden leds 500ms encesos
   
   digitalWrite(led0, 0);    // posar a 5V el pin 5
   digitalWrite(led1, 1);    // posar a 5V el pin 6
