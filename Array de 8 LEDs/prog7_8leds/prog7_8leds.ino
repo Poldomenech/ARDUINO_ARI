@@ -44,6 +44,6 @@ while(i<w)
 }
 else
 {
-  i=0;
+i=0;
 }
 }
