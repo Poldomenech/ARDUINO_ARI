@@ -1,5 +1,5 @@
 
-unsigned long t=150;   //temps de delay
+unsigned long t=100;   //temps de delay
 const int led0=10;     //assignacio pin 10 com a sortida pel led
 const int B1Pin=2;     //assignacio pin 2 per entrada boto 1
 int B1State=0;         //per guardar estat del boto 1
