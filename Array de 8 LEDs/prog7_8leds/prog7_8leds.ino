@@ -14,14 +14,7 @@ Serial.begin(9600);
 pinMode(led0,OUTPUT);
 pinMode(B1Pin, INPUT);
 pinMode(B2Pin, INPUT);
-  for(int i=0; i<w; i++)
-  {
-  digitalWrite(led0,1);
-  Serial.println(i);
-  delay(t);
-  digitalWrite(led0,0);
-  delay(t);
-  }
+ 
 }
 
 void loop() 
@@ -31,19 +24,23 @@ void loop()
 if (B1State==1&&B2State==0)
 {
   for(int i=0; i<30; i++)
+  {
   digitalWrite(led0,1);
   delay(t);
   digitalWrite(led0,0);
   delay(t);
+  }
 }
 else if(B1State==0&&B2State==1)
 {
 while(i<w)
+{
   digitalWrite(led0,1);
   delay(t);
   digitalWrite(led0,0);
   delay(t);
   i++;
+}
 }
 else
 {
