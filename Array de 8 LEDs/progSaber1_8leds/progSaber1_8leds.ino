@@ -20,6 +20,8 @@ const int led5 = 10;         // donar nom al pin 10 de l’Arduino
 const int led6 = 11;         // donar nom al pin 11 de l’Arduino
 const int led7 = 12;         // donar nom al pin 12 de l’Arduino
 const unsigned long t=200;
+int interval=200;
+unsigned long currentmillis = millis();
 
 //********** Setup ****************************************************************
 void setup()
@@ -40,7 +42,7 @@ void setup()
 void loop()
 {
         B1State = digitalRead(B1Pin);  //llegir l’estat del button 1 i gardar-lo
-        B2State =digitalRead(B2Pin);   //llegir l'estat del boto 2
+        B2State = digitalRead(B2Pin);   //llegir l'estat del boto 2
         
   if (B1State == 1&&B2State==0)       //programa1_8leds
   {
