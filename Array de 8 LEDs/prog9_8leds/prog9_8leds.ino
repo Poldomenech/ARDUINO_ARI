@@ -8,19 +8,19 @@
 //********** Includes *************************************************************
 
 //********** Variables ************************************************************
-const int ledPin[] = {5, 6, 7, 8,9,10,11,12};   // donar nom en un array als pins 5, 6, 7 i 8
-const int button1Pin = 2;             // donar nom al pin 2 de l’Arduino
-boolean button1Estat = LOW;           // definir variable d'estat pel polsador
-const int button2Pin=3;               // donar nom al pin 3 de l'Arduino
-boolean button2Estat= LOW;           // definir variable d'estat del polsador
+const int ledPin[] = {5, 6, 7, 8,9,10,11,12};   // donar nom en un array als pins 5, 6, 7, 8,9,10,11 i 12
+const int button1Pin = 2;                       // donar nom al pin 2 de l’Arduino
+boolean button1Estat = LOW;                     // definir variable d'estat pel polsador
+const int button2Pin=3;                         // donar nom al pin 3 de l'Arduino
+boolean button2Estat= LOW;                     // definir variable d'estat del polsador
 
-int ledNum = 8;                   // definir variable de número de leds
-int num = 0;                      // definir variable del número a mostrar
+int ledNum = 8;                                // definir variable de número de leds
+int num = 0;                                   // definir variable del número a mostrar
 
 //********** Setup ****************************************************************
 void setup()
 {
-  for(int i = 0; i < ledNum; i++) // definir els pins 5, 6, 7 i 8 com sortides
+  for(int i = 0; i < ledNum; i++) // definir els pins 5, 6, 7,8,9,10,11 i 12 com sortides
   {
     pinMode(ledPin[i], OUTPUT);
   }
@@ -40,7 +40,7 @@ void loop()
   if (button1Estat == HIGH)
   { 
     num = num + 1;                 // incrementar el número a mostrar
-    if (num == 255)       // quan ja ha ensenyat el 15 tornar al 0  
+    if (num == 255)       // quan ja ha ensenyat el 255 tornar al 0  
            {
               num = 0;
            }    
@@ -50,6 +50,19 @@ for(int j = 0; j < ledNum ; j++)   // actualitzar estat leds per mostrar número
     }
     delay(500);    // per evitar que en una pulsació curta salti més d'un número 
   }
+    else if(button2Estat == HIGH)
+  { 
+    num = num - 1;                 // incrementar el número a mostrar
+    if (num == 0)       // quan ja ha ensenyat el 0 tornar al 255  
+           {
+              num = 255;
+           }    
+for(int j = 0; j < ledNum ; j++)   // actualitzar estat leds per mostrar número
+    { 
+      digitalWrite(ledPin[j], bitRead(num, j));
+    }
+    delay(500);    // per evitar que en una pulsació curta salti més d'un número 
+}
 }
 
 //********** Funcions *************************************************************
