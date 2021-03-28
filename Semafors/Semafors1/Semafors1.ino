@@ -9,7 +9,13 @@
 //********** Variables ************************************************************
 const int ledPin[]={7,8,9,10,11,12};              //definir noms pels pins de sortida
 int ledNum=6;                                     //definir variable de numero de Leds
-unsigned long AR;                                 //dada per millis
+unsigned long ARon=0;                             //TON de semafor A RED
+unsigned long AOon=10;                            //TON de semagor A ORANGE
+unsigned long AGon=10;                            //TON de semafor A GREEN
+unsigned long BRon=0;                             //TON de semafor B RED
+unsigned long BOon=0;                             //TON de semafor B ORANGE
+unsigned long BGon=0;                             //TON de semafor B GREEN
+
 int sortides=9;                                   //sortides en vinari
 
 //********** Setup ****************************************************************
@@ -27,9 +33,6 @@ void setup() {
 
 //********** Loop *****************************************************************
 void loop() {
-  for(int j = 0; j < ledNum ; j++)   // actualitzar estat leds per mostrar número
-    { 
-      digitalWrite(ledPin[j], bitRead(sortides, j));
-    }
+  
   
 }
