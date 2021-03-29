@@ -47,7 +47,6 @@ if (millis()-currentmillis<=t1){                                                
   digitalWrite(8,0);                                                                //A ORANGE
   digitalWrite(9,0);                                                                //A GREEN
   
-  
   digitalWrite(10,1);                                                               //B RED
   digitalWrite(11,0);                                                               //B ORANGE
   digitalWrite(12,0);                                                               //B GREEN
@@ -59,8 +58,7 @@ else if(millis()-currentmillis<=t2&&millis()-currentmillis>t1){                 
   
   digitalWrite(10,0);                                                               //B RED
   digitalWrite(11,0);                                                               //B ORANGE
-  digitalWrite(12,1);                                                               //B GREEN
-  
+  digitalWrite(12,1);                                                               //B GREEN 
 }
 else if(millis()-currentmillis<=t3&&millis()-currentmillis>t2){                     //zona temporal 3
   digitalWrite(7,1);                                                                //A RED
