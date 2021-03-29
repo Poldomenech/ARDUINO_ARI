@@ -17,16 +17,16 @@ unsigned long t4=11000;                            //zona temporal 4
 unsigned long t5=15000;                            //zona temporal 5
 unsigned long t6=20000;                            //zona temporal 6
 unsigned long t7=21000;                            //zona temporal 7
-unsigned long cicleA=0;                       //marca de cicle per peatons A
-unsigned long cicleB=0;                       //marca de cicle per peatons B
-unsigned long tpA=0;                                    //constant temps peatons semafor A
-unsigned long tpB=0;                                    //constant temps peatons semafor B
-unsigned long sincA=50000;                    //currentmillis per peatons A
-unsigned long sincB=50000;                    //currentmillis per peatons B 
-bool estatLedPAG=false;                        //per guardar estat led Peatons A GREEN
-bool estatLedPBG=false;                        //per guardar estat led Peatons B GREEN
-const int BAPin=22;                                 //definir nom per Pin 22 Arduino (peatons semafor A)
-const int BBPin=23;                                 //definir nom per Pin 23 Arduino (peatons semafor B)
+unsigned long cicleA=0;                            //marca de cicle per peatons A
+unsigned long cicleB=0;                            //marca de cicle per peatons B
+unsigned long tpA=0;                               //constant temps peatons semafor A
+unsigned long tpB=0;                               //constant temps peatons semafor B
+unsigned long sincA=50000;                         //currentmillis per peatons A
+unsigned long sincB=50000;                         //currentmillis per peatons B 
+bool estatLedPAG=false;                            //per guardar estat led Peatons A GREEN
+bool estatLedPBG=false;                            //per guardar estat led Peatons B GREEN
+const int BAPin=22;                                //definir nom per Pin 22 Arduino (peatons semafor A)
+const int BBPin=23;                                //definir nom per Pin 23 Arduino (peatons semafor B)
 int BAState=0;                                     //per guardar estat del boto peatons semafor A
 int BBState=0;                                     //per guardar estat del boto peatons semafor B
 
@@ -42,7 +42,7 @@ void setup() {
   digitalWrite(ledPin[j], 0);
   }
   pinMode(BAPin,INPUT);                             //definir pin 2 com a entrada
-  pinMode(BBPin, INPUT);                           //definir pin 3 com a entrada
+  pinMode(BBPin, INPUT);                            //definir pin 3 com a entrada
 }
 
 //********** Loop *****************************************************************
@@ -67,7 +67,7 @@ if(BAState==1&&millis()-tpA<=3000){
   digitalWrite(4,0);                                                                //peatons RED
   cicleA=millis();
 }
-else if(BAState==1&&millis()-tpA>3000){
+else if(BAState==1&&millis()-tpA>3000){                                              //avisa que queden 2 segons
   if(millis()-cicleA>300){
   cicleA=millis();
   estatLedPAG=!estatLedPAG;
@@ -114,7 +114,6 @@ if (millis()-currentmillis<=t1&&BAState==0){                                    
   digitalWrite(3,0);                                                                //peatons GREEN
   digitalWrite(4,1);                                                                //peatons RED
   
-
 }
 else if(millis()-currentmillis<=t2&&millis()-currentmillis>t1&&BAState==0){            //zona temporal 2
   digitalWrite(7,1);                                                                //A RED
