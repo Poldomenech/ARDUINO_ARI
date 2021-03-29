@@ -63,7 +63,7 @@ if(BAState==1&&millis()-tpA<=3000){
   digitalWrite(7,1);                                                                //A RED
   digitalWrite(8,0);                                                                //A ORANGE
   digitalWrite(9,0);                                                                //A GREEN
-  digitalWrite(3,estatLedPAG);                                                                //peatons GREEN
+  digitalWrite(3,estatLedPAG);                                                      //peatons GREEN
   digitalWrite(4,0);                                                                //peatons RED
   cicleA=millis();
 }
@@ -74,7 +74,7 @@ else if(BAState==1&&millis()-tpA>3000){                                         
   digitalWrite(3,estatLedPAG);
   }
 
-else if(millis()-tpA>5000){
+else if(millis()-tpA>5000&&(millis()-currentmillis<t5||millis()-currentmillis>t6)){
   estatLedPAG=false;
   BAState=0;
   digitalWrite(3,estatLedPAG);
@@ -97,7 +97,7 @@ else if(BBState==1&&millis()-tpB>3000){
   digitalWrite(5,estatLedPBG);
   }
 
-else if(millis()-tpB>5000){
+else if(millis()-tpB>5000&&(millis()-currentmillis<t2||millis()-currentmillis>t3)){
   estatLedPBG=false;
   BBState=0;
   digitalWrite(5,estatLedPBG);
