@@ -80,14 +80,15 @@ else if(millis()-tpA>5000&&(millis()-currentmillis<t5||millis()-currentmillis>t6
   digitalWrite(3,estatLedPAG);
 }
 }
+
 //********** Passen els peatons semafor B ****************************************************
 if(BBState==1&&millis()-tpB<=3000){
   estatLedPBG=true;
   digitalWrite(10,1);                                                                //B RED
   digitalWrite(11,0);                                                                //B ORANGE
   digitalWrite(12,0);                                                                //B GREEN
-  digitalWrite(5,estatLedPBG);                                                      //peatons GREEN
-  digitalWrite(6,0);                                                                //peatons RED
+  digitalWrite(5,estatLedPBG);                                                       //peatons GREEN
+  digitalWrite(6,0);                                                                 //peatons RED
   cicleB=millis();
 }
 else if(BBState==1&&millis()-tpB>3000){
@@ -179,42 +180,42 @@ else if(millis()-currentmillis<=t2&&millis()-currentmillis>t1&&BBState==0){     
   digitalWrite(10,0);                                                               //B RED
   digitalWrite(11,0);                                                               //B ORANGE
   digitalWrite(12,1);                                                               //B GREEN
-  digitalWrite(5,0);                                                              //peatons GREEN
+  digitalWrite(5,0);                                                                //peatons GREEN
   digitalWrite(6,1);                                                                //peatons RED
 }
 else if(millis()-currentmillis<=t3&&millis()-currentmillis>t2&&BBState==0){                     //zona temporal 3
   digitalWrite(10,0);                                                               //B RED
   digitalWrite(11,1);                                                               //B ORANGE
   digitalWrite(12,0);                                                               //B GREEN
-  digitalWrite(5,0);                                                              //peatons GREEN
+  digitalWrite(5,0);                                                                //peatons GREEN
   digitalWrite(6,1);                                                                //peatons RED
 }
 else if(millis()-currentmillis<=t4&&millis()-currentmillis>t3&&BBState==0){                     //zona temporal 4
   digitalWrite(10,1);                                                               //B RED
   digitalWrite(11,0);                                                               //B ORANGE
   digitalWrite(12,0);                                                               //B GREEN
-  digitalWrite(5,0);                                                              //peatons GREEN
+  digitalWrite(5,0);                                                                //peatons GREEN
   digitalWrite(6,1);                                                                //peatons RED
 }
 else if(millis()-currentmillis<=t5&&millis()-currentmillis>t4&&BBState==0){                     //zona temporal 5
   digitalWrite(10,1);                                                               //B RED
   digitalWrite(11,0);                                                               //B ORANGE
   digitalWrite(12,0);                                                               //B GREEN
-  digitalWrite(5,0);                                                              //peatons GREEN
+  digitalWrite(5,0);                                                                //peatons GREEN
   digitalWrite(6,1);                                                                //peatons RED
 }
 else if(millis()-currentmillis<=t6&&millis()-currentmillis>t5&&BBState==0){                     //zona temporal 6
   digitalWrite(10,1);                                                               //B RED
   digitalWrite(11,0);                                                               //B ORANGE
   digitalWrite(12,0);                                                               //B GREEN
-  digitalWrite(5,0);                                                              //peatons GREEN
+  digitalWrite(5,0);                                                                //peatons GREEN
   digitalWrite(6,1);                                                                //peatons RED
 }
 else if(millis()-currentmillis<=t7&&millis()-currentmillis>t6&&BBState==0){                     //zona temporal 7
   digitalWrite(10,1);                                                               //B RED
   digitalWrite(11,0);                                                               //B ORANGE
   digitalWrite(12,0);                                                               //B GREEN
-  digitalWrite(5,0);                                                              //peatons GREEN
+  digitalWrite(5,0);                                                                //peatons GREEN
   digitalWrite(6,1);                                                                //peatons RED
 }
 
