@@ -58,7 +58,24 @@ tpB=millis();
 
 
 //********** Passen els peatons semafor A ****************************************************
-if(BAState==1&&millis()-tpA<=3000){
+if(BAState==1&&millis()-tpA<=1000){                                                  //avisa cotxes que es posa RED si esta GREEN
+  if(millis()-currentmillis>t4&&millis()-currentmillis<t5){
+  digitalWrite(7,0);                                                               //B RED
+  digitalWrite(8,1);                                                               //B ORANGE
+  digitalWrite(9,0);                                                               //B GREEN
+  digitalWrite(3,0);                                                                //peatons GREEN
+  digitalWrite(4,1);                                                                //peatons RED
+  }
+  else if (!(millis()-currentmillis>t4)&&!(millis()-currentmillis<t5)){            //un segon de delay i els peatons poden passar
+  digitalWrite(7,1);                                                               //B RED
+  digitalWrite(8,0);                                                               //B ORANGE
+  digitalWrite(9,0);                                                               //B GREEN
+  digitalWrite(3,0);                                                                //peatons GREEN
+  digitalWrite(4,1);                                                                //peatons RED
+  }
+}
+
+if(BAState==1&&millis()-tpA<=4000&&millis()-tpA>1000){
   estatLedPAG=true;
   digitalWrite(7,1);                                                                //A RED
   digitalWrite(8,0);                                                                //A ORANGE
@@ -67,14 +84,14 @@ if(BAState==1&&millis()-tpA<=3000){
   digitalWrite(4,0);                                                                //peatons RED
   cicleA=millis();
 }
-else if(BAState==1&&millis()-tpA>3000){                                              //avisa que queden 2 segons
+else if(BAState==1&&millis()-tpA>4000){                                              //avisa que queden 2 segons
   if(millis()-cicleA>300){
   cicleA=millis();
   estatLedPAG=!estatLedPAG;
   digitalWrite(3,estatLedPAG);
   }
 
-else if(millis()-tpA>5000&&(millis()-currentmillis<t5||millis()-currentmillis>t6)){
+else if(millis()-tpA>6000&&(millis()-currentmillis<t5||millis()-currentmillis>t6)){
   estatLedPAG=false;
   BAState=0;
   digitalWrite(3,estatLedPAG);
@@ -82,7 +99,24 @@ else if(millis()-tpA>5000&&(millis()-currentmillis<t5||millis()-currentmillis>t6
 }
 
 //********** Passen els peatons semafor B ****************************************************
-if(BBState==1&&millis()-tpB<=3000){
+if(BBState==1&&millis()-tpB<=1000){                                                  //avisa cotxes que es posa RED si esta GREEN
+  if(millis()-currentmillis<=t2&&millis()-currentmillis>t1){
+  digitalWrite(10,0);                                                               //B RED
+  digitalWrite(11,1);                                                               //B ORANGE
+  digitalWrite(12,0);                                                               //B GREEN
+  digitalWrite(5,0);                                                                //peatons GREEN
+  digitalWrite(6,1);                                                                //peatons RED
+  }
+  else if (!(millis()-currentmillis<=t2)&&!(millis()-currentmillis>t1)){            //un segon de delay i els peatons poden passar
+  digitalWrite(10,1);                                                               //B RED
+  digitalWrite(11,0);                                                               //B ORANGE
+  digitalWrite(12,0);                                                               //B GREEN
+  digitalWrite(5,0);                                                                //peatons GREEN
+  digitalWrite(6,1);                                                                //peatons RED
+  }
+}
+
+if(BBState==1&&millis()-tpB<=4000&&millis()-tpB>1000){
   estatLedPBG=true;
   digitalWrite(10,1);                                                                //B RED
   digitalWrite(11,0);                                                                //B ORANGE
@@ -91,14 +125,14 @@ if(BBState==1&&millis()-tpB<=3000){
   digitalWrite(6,0);                                                                 //peatons RED
   cicleB=millis();
 }
-else if(BBState==1&&millis()-tpB>3000){
+else if(BBState==1&&millis()-tpB>4000){
   if(millis()-cicleB>300){
   cicleB=millis();
   estatLedPBG=!estatLedPBG;
   digitalWrite(5,estatLedPBG);
   }
 
-else if(millis()-tpB>5000&&(millis()-currentmillis<t2||millis()-currentmillis>t3)){
+else if(millis()-tpB>6000&&(millis()-currentmillis<t2||millis()-currentmillis>t3)){
   estatLedPBG=false;
   BBState=0;
   digitalWrite(5,estatLedPBG);
