@@ -61,7 +61,7 @@ void loop() {
   
   if (botoState==1){                                //OB100
     tim2=millis();
-    result=random(1,6);
+    result=random(1,7);
       ELed1=0;
       ELed2=0;
       ELed3=0;
