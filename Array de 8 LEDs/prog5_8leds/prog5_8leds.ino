@@ -21,7 +21,7 @@ const int t=500;
 //********** Setup ****************************************************************
 void setup()
 {
-   pinMode(led0, OUTPUT);     // definir el pin 5 com una sortida
+  pinMode(led0, OUTPUT);     // definir el pin 5 com una sortida
   pinMode(led1, OUTPUT);     // definir el pin 6 com una sortida
   pinMode(led2, OUTPUT);     // definir el pin 7 com una sortida
   pinMode(led3, OUTPUT);     // definir el pin 8 com una sortida
@@ -69,6 +69,7 @@ void loop()
   digitalWrite(led5, 0);    // posar a 0V el pin 10
   digitalWrite(led6, 1);    // posar a 0V el pin 11
   digitalWrite(led7, 0);    // posar a 5V el pin 12
+
   
   delay(t);                  // es queden leds 500ms encesos
   

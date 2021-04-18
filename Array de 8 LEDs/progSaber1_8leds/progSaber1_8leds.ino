@@ -46,7 +46,7 @@ void loop()
 {
         B1State = digitalRead(B1Pin);  //llegir l’estat del button 1 i gardar-lo
         B2State = digitalRead(B2Pin);   //llegir l'estat del boto 2
-        Serial.println(currentmillis);
+        
         if (B1State == 1&&B2State==0)                                                       //si boto 1 apretat executa programa1_8leds
                           {
                           if ((millis()-currentmillis)<=interval)              //on tot
@@ -73,11 +73,11 @@ void loop()
                           digitalWrite(led6, LOW);     // posar a 0V el pin 11
                           digitalWrite(led7, 0 );     // posar a 0V el pin 12.
                           }
-                         else if ((millis()-currentmillis)>interval*2) 
-                         {
+                        else if ((millis()-currentmillis)>interval*2) 
+                        {
                           currentmillis=millis();                                     //sincro respecte millis
                           
-                         }
+                      }
                           }
                       else if(B1State==0&&B2State==1)                                 //boto 2 apretat executa programa2_8leds     
                         {
@@ -109,8 +109,8 @@ void loop()
                 {
                   currentmillis=millis();
                 }
-             
-           
+          
+          
           }
           else                                             //programa per defecte "cotxe fantastic"
           
@@ -127,7 +127,7 @@ void loop()
           }
           else if ((millis()-currentmillis)<=interval2*2&&(millis()-currentmillis)>interval2)
           {
- 
+
             digitalWrite(led0, 1);    // posar a 5V el pin 5
             digitalWrite(led1, 1);    // posar a 5V el pin 6
             digitalWrite(led2, 0);    // posar a 0V el pin 7
@@ -137,7 +137,7 @@ void loop()
             digitalWrite(led6, 1);    // posar a 5V el pin 11
             digitalWrite(led7, 1);    // posar a 5V el pin 12
           }
-           else if ((millis()-currentmillis)<=interval2*3&&(millis()-currentmillis)>interval2*2)
+          else if ((millis()-currentmillis)<=interval2*3&&(millis()-currentmillis)>interval2*2)
           
           {
             digitalWrite(led0, 0);    // posar a 0V el pin 5
@@ -150,7 +150,7 @@ void loop()
             digitalWrite(led7, 0);    // posar a 0V el pin 12
           }
           
-             else if ((millis()-currentmillis)<=interval2*4&&(millis()-currentmillis)>interval2*3)
+          else if ((millis()-currentmillis)<=interval2*4&&(millis()-currentmillis)>interval2*3)
             {
             digitalWrite(led0, 0);    // posar a 0V el pin 5
             digitalWrite(led1, 0);    // posar a 0V el pin 6
@@ -161,7 +161,7 @@ void loop()
             digitalWrite(led6, 0);    // posar a 0V el pin 11
             digitalWrite(led7, 0);    // posar a 0V el pin 12
             }
-             else if ((millis()-currentmillis)<=interval2*5&&(millis()-currentmillis)>interval2*4)
+          else if ((millis()-currentmillis)<=interval2*5&&(millis()-currentmillis)>interval2*4)
           {
   
             digitalWrite(led0, 0);    // posar a 0V el pin 5
@@ -174,7 +174,7 @@ void loop()
             digitalWrite(led7, 0);    // posar a 0V el pin 12
                     }
           
-             else if ((millis()-currentmillis)<=interval2*6&&(millis()-currentmillis)>interval2*5)
+            else if ((millis()-currentmillis)<=interval2*6&&(millis()-currentmillis)>interval2*5)
             {
             digitalWrite(led0, 0);    // posar a 0V el pin 5
             digitalWrite(led1, 0);    // posar a 0V el pin 6
@@ -186,7 +186,7 @@ void loop()
             digitalWrite(led7, 0);    // posar a 0V el pin 12
             }
 
-             else if ((millis()-currentmillis)<=interval2*7&&(millis()-currentmillis)>interval2*6)
+            else if ((millis()-currentmillis)<=interval2*7&&(millis()-currentmillis)>interval2*6)
             {
             digitalWrite(led0, 0);    // posar a 0V el pin 5
             digitalWrite(led1, 0);    // posar a 0V el pin 6
@@ -198,7 +198,7 @@ void loop()
             digitalWrite(led7, 0);    // posar a 0V el pin 12
             }
           
-             else if ((millis()-currentmillis)<=interval2*8&&(millis()-currentmillis)>interval2*7)
+            else if ((millis()-currentmillis)<=interval2*8&&(millis()-currentmillis)>interval2*7)
             {
             digitalWrite(led0, 0);    // posar a 0V el pin 5
             digitalWrite(led1, 1);    // posar a 5V el pin 6
@@ -210,7 +210,7 @@ void loop()
             digitalWrite(led7, 0);    // posar a 0V el pin 12
             }
           
-             else if ((millis()-currentmillis)<=interval2*9&&(millis()-currentmillis)>interval2*8)
+            else if ((millis()-currentmillis)<=interval2*9&&(millis()-currentmillis)>interval2*8)
             {
             digitalWrite(led0, 1);    // posar a 5V el pin 5
             digitalWrite(led1, 1);    // posar a 5V el pin 6
@@ -222,7 +222,7 @@ void loop()
             digitalWrite(led7, 1);    // posar a 5V el pin 12
                       }
             
-             else if ((millis()-currentmillis)<=interval2*10&&(millis()-currentmillis)>interval2*9)
+            else if ((millis()-currentmillis)<=interval2*10&&(millis()-currentmillis)>interval2*9)
             {
              digitalWrite(led0, 1);    // posar a 5V el pin 5
             digitalWrite(led1, 0);    // posar a 0V el pin 6
@@ -235,7 +235,7 @@ void loop()
             }
           
               else if ((millis()-currentmillis)<=interval2*11&&(millis()-currentmillis)>interval2*10)
-             {
+            {
              digitalWrite(led0, 0);    // posar a 5V el pin 5
             digitalWrite(led1, 0);    // posar a 0V el pin 6
             digitalWrite(led2, 0);    // posar a 0V el pin 7
@@ -244,10 +244,10 @@ void loop()
             digitalWrite(led5, 0);    // posar a 0V el pin 10
             digitalWrite(led6, 0);    // posar a 0V el pin 11
             digitalWrite(led7, 0);    // posar a 5V el pin 12
-             }
-             else
-             {         
-           currentmillis=millis();
-             }  
+            }
+            else
+            {         
+          currentmillis=millis();
+            }  
         }
 //********** Funcions *************************************************************

@@ -52,7 +52,7 @@ void loop()
   digitalWrite(led5, 0);    // posar a 0V el pin 10
   digitalWrite(led6, 0);    // posar a 5V el pin 11
   digitalWrite(led7, 0);    // posar a 5V el pin 12  
-             
+      
   delay(500);
 }
 
