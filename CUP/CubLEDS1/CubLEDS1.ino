@@ -37,28 +37,36 @@ void setup() {
 //********** Loop *****************************************************************
 
 void loop() {
-   
-  if(Pis>2){
-    Pis=0;
-    Serial.print("reset");
-    Serial.println("cero");
-  }
-  
-    for(int k = 0; k < TrNum ; k++){                // apagada de transistors
-     digitalWrite(TPin[k],LOW);
-    }
  
-     digitalWrite(TPin[Pis],HIGH);                      // s'activa el pis que toca
-  
-    for(int l = 0; l < ledNum ; l++){               // actualitzar estat columnes
-  
-      digitalWrite(ledPin[l], HIGH);
-      digitalWrite(ledPin[l-1], LOW);
-      delay(temps);
-     
+
+  switch (Pis){
+    case 0:
+    digitalWrite(TPin24,HIGH);
+    digitalWrite(TPin25,LOW);  
+    digitalWrite(TPin26,LOW); 
+
+    case 1:
+    digitalWrite(TPin24,LOW);
+    digitalWrite(TPin25,HIGH);  
+    digitalWrite(TPin26,LOW);
+
+    case 2:
+    digitalWrite(TPin24,HIGH);
+    digitalWrite(TPin25,LOW);  
+    digitalWrite(TPin26,LOW);
+
+    case 3:
+    Pis=0;
+  }   
       
+  
+    for(int l = 1; l < ledNum+1 ; l++){               // actualitzar estat columnes
+  
+      digitalWrite(ledPin[l-1], HIGH);
+      digitalWrite(ledPin[l], LOW);
+      delay(temps); 
     }
     Pis=Pis+1;
-    Serial.println(Pis);
+  }
 
 }
