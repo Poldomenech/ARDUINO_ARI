@@ -36,12 +36,22 @@ void setup() {
 //********** Loop *****************************************************************
 
 void loop() {
-  digitalWrite(TPin[Pis],1);
-  for(int l = 0; l < ledNum ; l++)                 // actualitzar estat columnes
-    { 
+  if(Pis>2){
+    Pis=0;
+  }
+  
+    for(int k = 0; k < TrNum ; k++){                // apagada de transistors
+     digitalWrite(TPin[k], 0);
+    }
+ 
+    digitalWrite(TPin[Pis],1);                      // s'activa el pis que toca
+  
+    for(int l = 0; l < ledNum ; l++){               // actualitzar estat columnes
+  
       digitalWrite(ledPin[l], 1);
       digitalWrite(ledPin[l-1], 0);
       delay(temps);
+      Pis=Pis+1;
       
     }
   
