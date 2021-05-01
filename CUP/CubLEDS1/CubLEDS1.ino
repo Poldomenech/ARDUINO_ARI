@@ -38,28 +38,8 @@ void setup() {
 
 void loop() {
  
-//
-//  switch (Pis){
-//    case 0:
-//    digitalWrite(TPin24,HIGH);
-//    digitalWrite(TPin25,LOW);  
-//    digitalWrite(TPin26,LOW); 
-//
-//    case 1:
-//    digitalWrite(TPin24,LOW);
-//    digitalWrite(TPin25,HIGH);  
-//    digitalWrite(TPin26,LOW);
-//
-//    case 2:
-//    digitalWrite(TPin24,HIGH);
-//    digitalWrite(TPin25,LOW);  
-//    digitalWrite(TPin26,LOW);
-//
-//    case 3:
-//    Pis=0;
-//  }   
-//      
-  for (int i=1;i<TrNum+1;i++){
+     
+  for (int i=1;i<TrNum+1;i++){                        // actualitzar estat de pis
     for(int l = 1; l < ledNum+1 ; l++){               // actualitzar estat columnes
   
       digitalWrite(ledPin[l-1],HIGH);
