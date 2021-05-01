@@ -1,9 +1,9 @@
-/**********************************************************************************
-**                                                                               **
-**                              CUP                                              **
-**                                                                               **
-**                                                                               **
-**********************************************************************************/
+//**********************************************************************************
+//**                                                                              **
+//**                              CUP                                             **
+//**                                                                              **
+//**                                                                              **
+//**********************************************************************************
 //********** Variables ************************************************************
 const int ledPin[] = {4,5,6,7,8,9,10,11,12};     // donar nom en un array als pins 4,5,6,7,8,9,10,11 i 12 columnes
 int ledNum = 9;                                  // definir variable de número de columna
@@ -26,11 +26,11 @@ void setup() {
   }
   for(int h = 0; h < ledNum ; h++)                // apagada de columnes
     { 
-    digitalWrite(ledPin[h], 0);
+    digitalWrite(ledPin[h],LOW);
     }
     for(int k = 0; k < TrNum ; k++)               // apagada de transistors
     { 
-    digitalWrite(TPin[k], 0);
+    digitalWrite(TPin[k],LOW);
     }
  Serial.println(Pis);
 }
@@ -45,15 +45,15 @@ void loop() {
   }
   
     for(int k = 0; k < TrNum ; k++){                // apagada de transistors
-     digitalWrite(TPin[k], 0);
+     digitalWrite(TPin[k],LOW);
     }
  
-    digitalWrite(TPin[Pis],1);                      // s'activa el pis que toca
+     digitalWrite(TPin[Pis],HIGH);                      // s'activa el pis que toca
   
     for(int l = 0; l < ledNum ; l++){               // actualitzar estat columnes
   
-      digitalWrite(ledPin[l], 1);
-      digitalWrite(ledPin[l-1], 0);
+      digitalWrite(ledPin[l], HIGH);
+      digitalWrite(ledPin[l-1], LOW);
       delay(temps);
      
       
