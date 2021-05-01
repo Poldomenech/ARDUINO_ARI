@@ -24,16 +24,23 @@ void setup() {
   }
   for(int h = 0; h < ledNum ; h++)                // apagada de columnes
     { 
-      digitalWrite(ledPin[h], 0);
+    digitalWrite(ledPin[h], 0);
     }
     for(int k = 0; k < TrNum ; k++)               // apagada de transistors
     { 
-      digitalWrite(TPin[k], 0);
+    digitalWrite(TPin[k], 0);
     }
 
 }
+//********** Loop *****************************************************************
 
 void loop() {
+  for(int l = 0; l < ledNum ; l++)                 // actualitzar estat columnes
+    { 
+      digitalWrite(ledPin[l], 1);
+      digitalWrite(ledPin[l-1], 0);
+      delay(temps);
+    }
   
 
 }
