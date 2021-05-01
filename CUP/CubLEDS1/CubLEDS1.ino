@@ -1,6 +1,6 @@
 /**********************************************************************************
 **                                                                               **
-**                              Array de 8 LEDs                                  **
+**                              CUP                                              **
 **                                                                               **
 **                                                                               **
 **********************************************************************************/
@@ -10,6 +10,7 @@ int ledNum = 9;                                  // definir variable de número 
 int temps=500;                                   // temps pels delays
 const int TPin[] = {24,25,26};                   // donar nom en un array als pins 24,25 i 26 pisos
 int TrNum=3;                                     // definir numero de pisos
+int Pis=0;                                       // definir primer pis engegat
 
 //********** Setup ****************************************************************
 
@@ -35,11 +36,13 @@ void setup() {
 //********** Loop *****************************************************************
 
 void loop() {
+  digitalWrite(TPin[Pis],1);
   for(int l = 0; l < ledNum ; l++)                 // actualitzar estat columnes
     { 
       digitalWrite(ledPin[l], 1);
       digitalWrite(ledPin[l-1], 0);
       delay(temps);
+      
     }
   
 
