@@ -51,9 +51,9 @@ void loop() {
       digitalWrite(ledPin[l], 1);
       digitalWrite(ledPin[l-1], 0);
       delay(temps);
-      Pis=Pis+1;
+     
       
     }
-  
+    Pis=Pis+1;
 
 }
