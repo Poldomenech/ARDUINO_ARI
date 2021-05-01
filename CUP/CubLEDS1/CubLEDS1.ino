@@ -15,6 +15,7 @@ int Pis=0;                                       // definir primer pis engegat
 //********** Setup ****************************************************************
 
 void setup() {
+  Serial.begin(9600);
   for(int i = 0; i < ledNum; i++)                // definir els pins 4,5,6,7,8,9,10,11 i 12 com sortides
   {
     pinMode(ledPin[i], OUTPUT);
@@ -31,13 +32,16 @@ void setup() {
     { 
     digitalWrite(TPin[k], 0);
     }
-
+ Serial.println(Pis);
 }
 //********** Loop *****************************************************************
 
 void loop() {
+   
   if(Pis>2){
     Pis=0;
+    Serial.print("reset");
+    Serial.println("cero");
   }
   
     for(int k = 0; k < TrNum ; k++){                // apagada de transistors
@@ -55,5 +59,6 @@ void loop() {
       
     }
     Pis=Pis+1;
+    Serial.println(Pis);
 
 }
