@@ -38,33 +38,40 @@ void setup() {
 
 //      digitalWrite(TPin[i-1],LOW);
 //      digitalWrite(TPin[i],HIGH);
-void loop() {
-  switch(Pis){
+void loop() 
+{
+  switch(Pis)
+  {
     case 0:
     digitalWrite(24,HIGH);
     digitalWrite(25,LOW);
     digitalWrite(26,LOW);
     dance();
+    Pis=Pis+1;
+    break;
 
     case 1:
     digitalWrite(25,HIGH);
     digitalWrite(24,LOW);
     digitalWrite(26,LOW);
     dance();
+    Pis=Pis+1;
+    break;
 
     case 2:
     digitalWrite(26,HIGH);
     digitalWrite(25,LOW);
     digitalWrite(24,LOW);
     dance();
-  }
- 
-     
- 
+    Pis=Pis+1;
+    break;
 
-  
-   
+    case 3:
+    Pis=0;
+    break;
   }
+   
+}
 //********** voids *****************************************************************
 void dance(){
       for(int l = 1; l < ledNum+1 ; l++){               // actualitzar estat columnes
