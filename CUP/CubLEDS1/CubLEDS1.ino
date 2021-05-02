@@ -32,22 +32,45 @@ void setup() {
     { 
     digitalWrite(TPin[k],LOW);
     }
- Serial.println(Pis);
+ 
 }
 //********** Loop *****************************************************************
 
+//      digitalWrite(TPin[i-1],LOW);
+//      digitalWrite(TPin[i],HIGH);
 void loop() {
+  switch(Pis){
+    case 0:
+    digitalWrite(24,HIGH);
+    digitalWrite(25,LOW);
+    digitalWrite(26,LOW);
+    dance();
+
+    case 1:
+    digitalWrite(25,HIGH);
+    digitalWrite(24,LOW);
+    digitalWrite(26,LOW);
+    dance();
+
+    case 2:
+    digitalWrite(26,HIGH);
+    digitalWrite(25,LOW);
+    digitalWrite(24,LOW);
+    dance();
+  }
  
      
-  for (int i=1;i<TrNum+1;i++){                        // actualitzar estat de pis
-    for(int l = 1; l < ledNum+1 ; l++){               // actualitzar estat columnes
+ 
+
+  
+   
+  }
+//********** voids *****************************************************************
+void dance(){
+      for(int l = 1; l < ledNum+1 ; l++){               // actualitzar estat columnes
   
       digitalWrite(ledPin[l-1],HIGH);
       digitalWrite(ledPin[l],LOW);
-      digitalWrite(TPin[i-1],LOW);
-      digitalWrite(TPin[i],HIGH);
       delay(temps); 
     }
-  }
-   
-  }
+}
