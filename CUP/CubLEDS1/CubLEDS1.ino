@@ -26,13 +26,13 @@ void setup() {
     pinMode(TPin[j], OUTPUT);
   }
   for(int h = 0; h < ledNum ; h++)                // apagada de columnes
-    { 
-    digitalWrite(ledPin[h],LOW);
-    }
-    for(int k = 0; k < TrNum ; k++)               // apagada de transistors
-    { 
-    digitalWrite(TPin[k],LOW);
-    }
+  { 
+  digitalWrite(ledPin[h],LOW);
+  }
+  for(int k = 0; k < TrNum ; k++)               // apagada de transistors
+  { 
+  digitalWrite(TPin[k],LOW);
+  }
  
 }
 //********** Loop *****************************************************************
@@ -68,11 +68,11 @@ void loop()
 }
 //********** voids *****************************************************************
 void dance()
- {
-      for(int l = 0; l < ARRAY_SIZE(ledPin); l++){               // actualitzar estat columnes
-  
+{
+      for(int l = 0; l < ARRAY_SIZE(ledPin); l++)
+      {        
       digitalWrite(ledPin[l],HIGH);      
       delay(temps); 
       digitalWrite(ledPin[l],LOW);
- }
+      }
 }
