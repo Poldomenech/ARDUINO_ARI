@@ -36,9 +36,6 @@ void setup() {
  
 }
 //********** Loop *****************************************************************
-
-//      digitalWrite(TPin[i-1],LOW);
-//      digitalWrite(TPin[i],HIGH);
 void loop() 
 {
   switch(Pis)
@@ -48,6 +45,7 @@ void loop()
     digitalWrite(25,LOW);
     digitalWrite(26,LOW);
     dance();
+    Serial.println("0");
     Pis=Pis+1;
     break;
 
@@ -56,6 +54,7 @@ void loop()
     digitalWrite(24,LOW);
     digitalWrite(26,LOW);
     dance();
+      Serial.println("1");
     Pis=Pis+1;
     break;
 
@@ -64,14 +63,11 @@ void loop()
     digitalWrite(25,LOW);
     digitalWrite(24,LOW);
     dance();
-    Pis=Pis+1;
-    break;
-
-    case 3:
+      Serial.println("2");
     Pis=0;
     break;
-  }
-   
+
+  } 
 }
 //********** voids *****************************************************************
 void dance()
@@ -81,5 +77,6 @@ void dance()
       digitalWrite(ledPin[l],HIGH);      
       delay(temps); 
       digitalWrite(ledPin[l],LOW);
+        Serial.println("dance");
  }
 }
