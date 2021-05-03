@@ -45,7 +45,6 @@ void loop()
     digitalWrite(25,LOW);
     digitalWrite(26,LOW);
     dance();
-    Serial.println("0");
     Pis=Pis+1;
     break;
 
@@ -54,7 +53,6 @@ void loop()
     digitalWrite(24,LOW);
     digitalWrite(26,LOW);
     dance();
-      Serial.println("1");
     Pis=Pis+1;
     break;
 
@@ -63,7 +61,6 @@ void loop()
     digitalWrite(25,LOW);
     digitalWrite(24,LOW);
     dance();
-    Serial.println("2");
     Pis=0;
     break;
 
@@ -77,6 +74,5 @@ void dance()
       digitalWrite(ledPin[l],HIGH);      
       delay(temps); 
       digitalWrite(ledPin[l],LOW);
-      Serial.println("dance");
  }
 }
