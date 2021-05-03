@@ -5,6 +5,7 @@
 //**                                                                              **
 //**********************************************************************************
 //********** Variables ************************************************************
+//#define ARRAY_SIZE(array) ((sizeof(array))/(sizeof(int)))    //PER UTILITZAR LA POSICIÓ DE LES VARIABLES
 const int ledPin[] = {4,5,6,7,8,9,10,11,12};     // donar nom en un array als pins 4,5,6,7,8,9,10,11 i 12 columnes
 int ledNum = 9;                                  // definir variable de número de columna
 int temps=500;                                   // temps pels delays
@@ -73,11 +74,12 @@ void loop()
    
 }
 //********** voids *****************************************************************
-void dance(){
-      for(int l = 1; l < ledNum+1 ; l++){               // actualitzar estat columnes
+void dance()
+ {
+      for(int l = 0; l < ledNum ; l++){               // actualitzar estat columnes
   
-      digitalWrite(ledPin[l-1],HIGH);
-      digitalWrite(ledPin[l],LOW);
+      digitalWrite(ledPin[l],HIGH);      
       delay(temps); 
-    }
+      digitalWrite(ledPin[l],LOW);
+ }
 }
