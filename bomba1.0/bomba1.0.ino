@@ -8,6 +8,7 @@
 //********** Includes *************************************************************
 //********** Variables ************************************************************
 #include <Keypad.h> 
+byte teta;
 char TECLA;
 const byte FILAS=4;
 const byte COLUMNAS=4;
@@ -41,6 +42,7 @@ for(int i = 0; i < 6 ; i++)
   Serial.print(INDICE);
   }
   INDICE=0;
+  Serial.println("");
   
 }
 
@@ -50,12 +52,15 @@ for(int i = 0; i < 6 ; i++)
 
 
 void loop() {
-TECLA = teclat.getKey();   // obtiene tecla presionada y asigna a variable
-  if (TECLA)        // comprueba que se haya presionado una tecla
+TECLA = teclat.getKey();      // obtiene tecla presionada y asigna a variable
+
+  if (TECLA)                  // comprueba que se haya presionado una tecla
   {
-    PASS[INDICE] = TECLA;    // almacena en array la tecla presionada
-    INDICE++;       // incrementa indice en uno
+    PASS[INDICE] = TECLA-48;    // almacena en array la tecla presionada
+    //Serial.println(INDICE);
+    INDICE++;                 // incrementa indice en uno
     Serial.print(TECLA);    // envia a monitor serial la tecla presionada
+    
   }
 
   if(INDICE == 6)       // si ya se almacenaron los 6 digitos
@@ -64,6 +69,7 @@ TECLA = teclat.getKey();   // obtiene tecla presionada y asigna a variable
       Serial.println(" Correcta");  // imprime en monitor serial que es correcta la clave
     else
       Serial.println(" Incorrecta");  // imprime en monitor serial que es incorrecta la clave
+
 
     INDICE = 0;
   }
