@@ -25,6 +25,8 @@ char PASS_RANDOM[7];
 char PASS[7];
 byte INDICE=0;
 Keypad teclat=Keypad(makeKeymap(keys),pinesFilas, pinesColumnas, FILAS, COLUMNAS);
+bool ARMED=0;
+unsigned long currentmillis=0;
 
 
 void setup() {
@@ -72,5 +74,6 @@ TECLA = teclat.getKey();      // obtiene tecla presionada y asigna a variable
 
 
     INDICE = 0;
+    ARMED=1;
   }
 }
