@@ -27,6 +27,7 @@ byte INDICE=0;
 Keypad teclat=Keypad(makeKeymap(keys),pinesFilas, pinesColumnas, FILAS, COLUMNAS);
 bool ARMED=0;
 unsigned long currentmillis=0;
+unsigned long DETONATION=5000;                                                           //temps de detonacio
 
 
 void setup() {
@@ -83,16 +84,18 @@ switch (ARMED)
       Serial.println(" Incorrecta");  // imprime en monitor serial que es incorrecta la clave
 
     INDICE = 0;
-    Serial.println(ARMED);
+    
     }
    
   }
+  break;
  
-//case 1:
-//      Serial.println(millis()-currentmillis);                        //PLANTADA
-//          delay(500); 
-//          Serial.println ("ARMED");
-//          Serial.println  (ARMED);                  
+case 1:
+      
+      PLANTADA();
+      break;
+          
+                         
 
 }
   
@@ -104,9 +107,16 @@ switch (ARMED)
 
 void PLANTADA()
 {
-
-
-
-
   
+  if (millis()-currentmillis>DETONATION)
+  {
+    Serial.println("BOOOOOOM!");
+    ARMED=0;
+  }
+  else
+  {
+    Serial.println(millis()-currentmillis);
+    delay(500); 
+  }
+    
 }
