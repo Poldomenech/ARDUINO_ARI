@@ -56,6 +56,10 @@ for(int i = 0; i < 6 ; i++)
 void loop() {
 TECLA = teclat.getKey();      // obtiene tecla presionada y asigna a variable
 
+switch (ARMED)
+{
+  case 0:
+
   if (TECLA)                  // comprueba que se haya presionado una tecla
   {
     PASS[INDICE] = TECLA-48;    // almacena en array la tecla presionada
@@ -67,13 +71,42 @@ TECLA = teclat.getKey();      // obtiene tecla presionada y asigna a variable
 
   if(INDICE == 6)       // si ya se almacenaron los 6 digitos
   {
-    if(!strcmp(PASS, PASS_RANDOM))   // compara clave ingresada con clave maestra
+    if(strcmp(PASS, PASS_RANDOM)==0)   // compara clave ingresada con clave maestra
+    {
       Serial.println(" Correcta");  // imprime en monitor serial que es correcta la clave
+      ARMED=1;
+      currentmillis=millis();
+       Serial.println(ARMED);
+    }
     else
+    {
       Serial.println(" Incorrecta");  // imprime en monitor serial que es incorrecta la clave
 
-
     INDICE = 0;
-    ARMED=1;
+    Serial.println(ARMED);
+    }
+   
   }
+ 
+//case 1:
+//      Serial.println(millis()-currentmillis);                        //PLANTADA
+//          delay(500); 
+//          Serial.println ("ARMED");
+//          Serial.println  (ARMED);                  
+
+}
+  
+}
+
+//********** FC's *************************************************************
+
+
+
+void PLANTADA()
+{
+
+
+
+
+  
 }
