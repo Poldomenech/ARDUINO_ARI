@@ -20,7 +20,7 @@ char keys[FILAS][COLUMNAS]=
 };
 byte pinesFilas[FILAS] = {9,8,7,6};   
 byte pinesColumnas[COLUMNAS] = {5,4,3,2}; 
-char PASS_RANDOM[7]={1,2,3,4,5,6};
+char PASS_RANDOM[7];
 char PASS[7];
 byte INDICE=0;
 Keypad teclat=Keypad(makeKeymap(keys),pinesFilas, pinesColumnas, FILAS, COLUMNAS);
@@ -35,11 +35,12 @@ for(int i = 0; i < 6 ; i++)
 {                
   PASS_RANDOM[i]=random(1,10);
 }
-  for (int i=0; i<7;i++)
+  for (int i=0; i<6;i++)
   {
   INDICE=PASS_RANDOM[i];
   Serial.print(INDICE);
   }
+  INDICE=0;
   
 }
 
@@ -49,6 +50,21 @@ for(int i = 0; i < 6 ; i++)
 
 
 void loop() {
-TECLA=teclat.getKey();
+TECLA = teclat.getKey();   // obtiene tecla presionada y asigna a variable
+  if (TECLA)        // comprueba que se haya presionado una tecla
+  {
+    PASS[INDICE] = TECLA;    // almacena en array la tecla presionada
+    INDICE++;       // incrementa indice en uno
+    Serial.print(TECLA);    // envia a monitor serial la tecla presionada
+  }
 
+  if(INDICE == 6)       // si ya se almacenaron los 6 digitos
+  {
+    if(!strcmp(PASS, PASS_RANDOM))   // compara clave ingresada con clave maestra
+      Serial.println(" Correcta");  // imprime en monitor serial que es correcta la clave
+    else
+      Serial.println(" Incorrecta");  // imprime en monitor serial que es incorrecta la clave
+
+    INDICE = 0;
+  }
 }
