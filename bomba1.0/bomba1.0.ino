@@ -78,6 +78,11 @@ switch (ARMED)
       ARMED=1;
       currentmillis=millis();
        Serial.println(ARMED);
+       for (int i=0; i<6;i++)
+       {
+       PASS[i]=0;
+       }
+      INDICE = 0;
     }
     else
     {
