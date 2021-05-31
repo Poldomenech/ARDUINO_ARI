@@ -8,13 +8,13 @@
 //******* Includes ************************************************************
 
 //******* Variables ***********************************************************
-const int speakerPin = 9;   // pin for speaker
+const int speakerPin = 29;   // pin for speaker
 int tempo = 100;
 
 //Melody 1
-//int length = 15; // the number of notes
-//char notes[] = "ccggaagffeeddc "; // a space represents a rest
-//int beats[] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 4 }; // time notes
+int length = 15; // the number of notes
+char notes[] = "ccggaagffeeddc "; // a space represents a rest
+int beats[] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 4 }; // time notes
 
 //Melody 2 himne del Barça
 //int length = 21; 
@@ -22,9 +22,9 @@ int tempo = 100;
 //int beats[]={3, 2, 2, 1, 3, 2, 2, 1, 2, 1, 2, 2, 1, 3, 1, 2, 1, 1, 1, 1, 3, 1};
 
 //Melody 3
-int length = 51;
-char notes[] = "eeeeeeegcdefffffeeeeeddedgeeeeeeegcdefffffeeeeggfdc ";
-int beats[] = {2,2,3,2,2,3,2,2,2,1,4,2,2,2,1,2,2,2,1,1,2,2,2,2,3,3,2,2,3,2,2,3,2,2,2,1,4,2,2,2,2,2,2,2,1,1,2,2,2,2,4};
+//int length = 51;
+//char notes[] = "eeeeeeegcdefffffeeeeeddedgeeeeeeegcdefffffeeeeggfdc ";
+//int beats[] = {2,2,3,2,2,3,2,2,2,1,4,2,2,2,1,2,2,2,1,1,2,2,2,2,3,3,2,2,3,2,2,3,2,2,2,1,4,2,2,2,2,2,2,2,1,1,2,2,2,2,4};
 
 //****** Setup ****************************************************************
 void setup() {
